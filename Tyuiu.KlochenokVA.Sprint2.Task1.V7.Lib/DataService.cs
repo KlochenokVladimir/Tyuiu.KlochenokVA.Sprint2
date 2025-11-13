@@ -2,17 +2,17 @@
 
 namespace Tyuiu.KlochenokVA.Sprint2.Task1.V7.Lib
 {
-    public class DataService
+    public class DataService : ISprint2Task1V7
     {
         public bool[] GetLogicOperations(int a, int b, int c, int d)
         {
             bool[] res = new bool[6];
-            res[0] = (a > b) && (c < d);        // (195 > 16) && (14 < 45) = True
-            res[1] = (a < b) && (c > d);        // (195 < 16) && (14 > 45) = False  
-            res[2] = !(a > b);                  // !(195 > 16) = False
-            res[3] = (b > c) ^ (d < a);         // (16 > 14) ^ (45 < 195) = False
-            res[4] = (a >= b) && (c <= d);      // (195 >= 16) && (14 <= 45) = True
-            res[5] = (a == b) | (c > d);        // (195 == 16) | (14 > 45) = False
+            res[0] = (a > b) && (c < d);        
+            res[1] = (a < b) && (c > d);        
+            res[2] = !(a > b);                  
+            res[3] = (b > c) ^ (d < a);         
+            res[4] = (a >= b) && (c <= d);      
+            res[5] = (a == b) | (c > d);        
             return res;
         }
     }
