@@ -10,19 +10,21 @@ namespace Tyuiu.KlochenokVA.Sprint2.Task3.V11.Lib
 
             if (x > 0)
             {
-                y = x + Math.Pow((x - 15.0) / (x - 19.0), x);
+                double temp = (x - 15.0) / (x - 19.0);
+                y = x + Math.Pow(temp, x);
             }
             else if (x == 0)
             {
-                y = (x * x - Math.Cos(x * x) + 10) / (x * x - Math.Sin(x * x) + 12);
+                double xx = x * x;
+                y = (xx - Math.Cos(xx) + 10.0) / (xx - Math.Sin(xx) + 12.0);
             }
             else if (x > -15 && x < 0)
             {
-                y = Math.Pow(1 + 1.0 / (x * x), x);
+                y = Math.Pow(1.0 + 1.0 / (x * x), x);  // ← Вот тут была ошибка: 1 вместо 1.0
             }
             else if (x < -15)
             {
-                y = x + 10 * x - 1.0 / x;
+                y = x + 10.0 * x - 1.0 / x;
             }
 
             return y;
