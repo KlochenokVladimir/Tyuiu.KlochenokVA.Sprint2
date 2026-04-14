@@ -6,13 +6,18 @@ namespace Tyuiu.KlochenokVA.Sprint2.Task1.V7.Test
     public sealed class DataServiceTest
     {
         [TestMethod]
-        public void TestMethod1()
+        public void ValidGetLogicOperations()
         {
             DataService ds = new DataService();
-            int a = 195, b = 16, c = 14, d = 45;
-            bool[] expected = { true, false, false, false, true, false };
-            bool[] actual = ds.GetLogicOperations(a, b, c, d);
-            CollectionAssert.AreEqual(expected, actual);
+            int a = 195;
+            int b = 16;
+            int c = 14;
+            int d = 45;
+            bool[] res = new bool[6];
+            res = ds.GetLogicOperations(a, b, c, d);
+            bool[] wait = new bool[6] { true, false, false, false, true, false };
+
+            CollectionAssert.AreEqual(wait, res);
         }
     }
 }
